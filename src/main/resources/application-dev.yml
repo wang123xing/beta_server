@@ -1,0 +1,76 @@
+server:
+  compression:
+    enabled: true
+    mime-types: application/javascript,application/json,application/xml,text/html,text/xml,text/plain,text/css,image/*
+    min-response-size: 1024
+  port: 18080
+  servlet:
+    context-path: /Account
+  tomcat:
+    max-swallow-size: -1
+spring:
+  application:
+    name: bate
+swagger:
+  base-package: cn.beta.platform.controller
+  description: 运营管理后台
+  enable: true
+  title: 运营管理后台
+  version: 1.0.0
+webhookUrl:
+  monitor_dingding_broadcast: ''
+  phones: ''
+jdbc:
+  type: com.alibaba.druid.pool.DruidDataSource
+beta:
+  redis:
+    database: 1
+    host: 127.0.0.1
+    password:
+    port: 6379
+    pool:
+      maxIdle: 8
+      maxTotal: 8
+      maxWaitMillis: 5000
+      minIdle: 1
+      nodeList:
+        - host: 127.0.0.1
+          port: 6379
+        - host: 127.0.0.1
+          port: 6379
+        - host: 127.0.0.1
+          port: 6379
+        - host: 127.0.0.1
+          port: 6379
+        - host: 127.0.0.1
+          port: 6379
+        - host: 127.0.0.1
+          port: 6379
+  shiro:
+    excludeUrls: /user/Login,/user/Register,/user/Logout,/user/updateToken
+    ## mybatis-plus
+mybatis-plus:
+  config-location: classpath*:mybatis-config.xml
+  configuration:
+    map-underscore-to-camel-case: true # 虽然默认为 true ，但是还是显示去指定下。
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+  mapperLocations: classpath*:mapper/*.xml
+  typeAliasesPackage: top.moodfly.platform.user.dataobject
+read:
+  jdbc:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: P@ssW0rd
+    url: jdbc:mysql://127.0.0.1:3306/mall?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+write:
+  jdbc:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: P@ssW0rd
+    url: jdbc:mysql://127.0.0.1:3306/mall?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+
+
